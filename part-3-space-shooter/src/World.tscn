@@ -29,3 +29,12 @@ position = Vector2( 279, 121 )
 
 [node name="EnemySpawner" parent="." instance=ExtResource( 3 )]
 position = Vector2( 320, 0 )
+
+[node name="Score" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 14.0
+text = "Score = 0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
