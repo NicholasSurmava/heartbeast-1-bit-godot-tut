@@ -1,9 +1,19 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/Ship.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/EnemySpawner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/World.gd" type="Script" id=4]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 2
+emission_box_extents = Vector3( 1, 90, 1 )
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = -100.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
 
 [node name="World" type="Node" groups=[
 "World",
@@ -19,17 +29,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="StarsParticles" type="Particles2D" parent="."]
+position = Vector2( 320, 90 )
+amount = 200
+lifetime = 7.0
+preprocess = 7.0
+process_material = SubResource( 1 )
+
 [node name="Ship" parent="." instance=ExtResource( 1 )]
 position = Vector2( 48, 90 )
-
-[node name="Enemy" parent="." instance=ExtResource( 2 )]
-position = Vector2( 282, 21 )
-
-[node name="Enemy2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 288, 75 )
-
-[node name="Enemy3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 279, 121 )
+z_index = 1
 
 [node name="EnemySpawner" parent="." instance=ExtResource( 3 )]
 position = Vector2( 320, 0 )
