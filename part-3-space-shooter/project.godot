@@ -19,6 +19,10 @@ config/name="Part- 3 -space-shooter"
 run/main_scene="res://src/StartMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Music="res://src/Music.tscn"
+
 [display]
 
 window/size/width=320
