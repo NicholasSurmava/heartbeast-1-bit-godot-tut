@@ -6,9 +6,6 @@ onready var bulletSound = $BulletSound
 
 func _ready():
 	bulletSound.play()
-	
-func _exit_tree():
-	create_hit_effect()
 
 func create_hit_effect():
 	var main = get_tree().current_scene
